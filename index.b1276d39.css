@@ -13,24 +13,14 @@ a {
 }
 
 .people {
-  --colomn-count: 2;
-  grid-template-columns: repeat(var(--colomn-count), min-content);
+  --card-width: 220px;
+  grid-template-columns: repeat(auto-fill, var(--card-width));
   justify-content: center;
   gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
   display: grid;
-}
-
-@media (width >= 750px) {
-  .people {
-    --colomn-count: 3;
-  }
-}
-
-@media (width >= 1000px) {
-  .people {
-    --colomn-count: 4;
-  }
 }
 
 .person {
@@ -43,8 +33,9 @@ a {
 }
 
 .photo > img {
-  border-radius: 50%;
+  border-radius: 120px;
   width: 100%;
+  transition: border-radius 1s;
 }
 
 .photo {
@@ -98,5 +89,17 @@ a {
 
 .person:hover .sport, .person:hover .pay {
   display: inline-block;
+}
+
+.pay:before {
+  content: "$";
+}
+
+.pay:after {
+  content: "M";
+}
+
+.sport:after {
+  content: ",";
 }
 /*# sourceMappingURL=index.b1276d39.css.map */
